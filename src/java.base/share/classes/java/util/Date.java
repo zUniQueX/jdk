@@ -985,14 +985,13 @@ public class Date
      * value returned by the {@link Date#getTime}
      * method. That is, the hash code is the value of the expression:
      * <blockquote><pre>{@code
-     * (int)(this.getTime()^(this.getTime() >>> 32))
+     * Long.hashCode(this.getTime())
      * }</pre></blockquote>
      *
      * @return  a hash code value for this object.
      */
     public int hashCode() {
-        long ht = this.getTime();
-        return (int) ht ^ (int) (ht >> 32);
+        return Long.hashCode(this.getTime());
     }
 
     /**
